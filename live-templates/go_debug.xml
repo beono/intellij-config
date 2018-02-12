@@ -1,13 +1,9 @@
-<template name="deb" value="{&#10;&#9;fmt.Printf(&quot;\n##### DEBUG BEGIN #####\n&quot;)&#10;&#9;fmt.Printf(&quot;FILE: \&quot;%s:%d\&quot;, TIME: %s %s \n\n&quot;, &quot;$FILE$&quot;, $LINE$, &quot;$DATE$&quot;, &quot;$TIME$&quot;)&#10;&#10;&#9;fmt.Println($VALUES$)&#10;&#9;// a Go-syntax representation of the value&#10;&#9;//fmt.Printf(&quot;%#v \n&quot;, )&#10;&#9;&#10;&#9;fmt.Printf(&quot;FILE: \&quot;%s:%d\&quot;, TIME: %s %s \n&quot;, &quot;$FILE$&quot;, $LINE$, &quot;$DATE$&quot;, &quot;$TIME$&quot;)&#10;&#9;fmt.Println(&quot;\n#####  DEBUG END  #####\n&quot;)&#10;}" description="Helper for debugging" toReformat="false" toShortenFQNames="true">
+<template name="deb" value="{&#10;&#9;fmt.Printf(&quot;\nDEBUG \&quot;%s:%d\&quot; %s %s {\n\n&quot;, &quot;$FILE$&quot;, $LINE$, &quot;$DATE$&quot;, &quot;$TIME$&quot;)&#10;&#9;// a Go-syntax representation of the value&#10;&#9;fmt.Printf(&quot;\t%#v \n\n&quot;, $END$)&#10;&#9;fmt.Println(&quot;}&quot;)&#10;}" description="Helper for debugging" toReformat="false" toShortenFQNames="true">
   <variable name="FILE" expression="fileName()" defaultValue="" alwaysStopAt="false" />
   <variable name="LINE" expression="lineNumber()" defaultValue="" alwaysStopAt="false" />
   <variable name="DATE" expression="date()" defaultValue="" alwaysStopAt="false" />
   <variable name="TIME" expression="time()" defaultValue="" alwaysStopAt="false" />
-  <variable name="VALUES" expression="complete()" defaultValue="" alwaysStopAt="true" />
   <context>
     <option name="GO" value="true" />
-    <option name="GO_FILE" value="true" />
-    <option name="GO_BLOCK" value="true" />
-    <option name="GO_TYPE" value="true" />
   </context>
 </template>
